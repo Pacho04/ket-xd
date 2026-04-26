@@ -1,17 +1,26 @@
+// firebase.js
+
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"; // 👈 Añade esto
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+// ❗ analytics opcional (puedes quitarlo si quieres)
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCHZEaOhjvG85UBfG6X98VBwh7fxhPqCzg",
-  authDomain: "rellenitas-xd.firebaseapp.com",
-  projectId: "rellenitas-xd",
-  storageBucket: "rellenitas-xd.firebasestorage.app",
-  messagingSenderId: "119991634640",
-  appId: "1:119991634640:web:691dcbbd1b9b78c0072cd5",
-  measurementId: "G-8NRFNQG37C"
+  apiKey: "AIzaSyBj8TI-HrE39SCsw-QNwehBNJRQRrqiRKk",
+  authDomain: "ket-xd.firebaseapp.com",
+  projectId: "ket-xd",
+  storageBucket: "ket-xd.firebasestorage.app",
+  messagingSenderId: "815470658772",
+  appId: "1:815470658772:web:0f1ca06e8a6fe37d606741",
+  measurementId: "G-RSK8MDKPMP"
 };
 
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app); // 👈 Exportamos 'db' para usarlo en App.jsx
-const analytics = getAnalytics(app);
+
+// ✅ ESTO ES LO IMPORTANTE
+export const db = getFirestore(app);
+export const storage = getStorage(app);
+
+// opcional
+export const analytics = getAnalytics(app);
